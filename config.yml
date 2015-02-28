@@ -6,100 +6,94 @@
 
 # ブック名(ファイル名になるもの。ASCII範囲の文字を使用)
 bookname: groonga-beginners-book-ja
-
+# 記述言語。省略した場合はja
+language: ja
 # 書名
 booktitle: ゼロからはじめる全文検索エンジンGroonga入門
-
-# 著者名。「, 」で区切って複数指定できる
+# 固有IDに使用するドメイン。省略した場合は時刻に基づくランダムUUIDが入る
+#urnid: urn:uid:http://tatsu-zine.com/books/review-sample-book/1.0.0/
+# ISBN。省略した場合はurnidが入る
+# isbn: null
+# 著者名。["高橋征義", "John Doe"] のように配列を使うことで複数指定可
 aut: ["Masafumi Yokoyama"]
+# 出版社。配列書式で複数指定可能
+#prt: 達人出版会
+# 編集者。配列書式で複数指定可能
+#edt: 高橋征義
+# 刊行日。YYYY-MM-DD形式。省略した場合は本日の日付
+#date: 2011-08-03
+# 発行年月。YYYY-MM-DD形式による配列指定。省略した場合はdateを使用する
+# 複数指定する場合は次のように記述する
+# [["初版第第1刷の日付", "初版第第2刷の日付"], ["第2版第1刷の日付"]]
+# 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
+#history: [["2011-08-03 v1.0.0版発行"]]
+# 権利表記
+#rights: (C) 2011 Masayoshi Takahashi
 
-# 以下はオプション
 # 以下はオプション(autと同じように配列書式で複数指定可能)。
-# a-が付いているものはcreator側、
-# 付いていないものはcontributor側(二次協力者)に入る
-# a-adp, adp: 異なるメディア向けに作り直した者
-# a-ann, ann: 注釈記述者
-# a-arr, arr: アレンジした者
-# a-art, art: グラフィックデザインおよび芸術家
-# a-asn, asn: 関連・かつての所有者・関係者
-# a-aqt, aqt: 大きく引用された人物
-# a-aft, aft: 後書き・奥付の責任者
-# a-aui, aui: 序論・序文・前書きの責任者
-# a-ant, ant: 目録責任者
-# a-bkp, bkp: メディア制作責任者
-# a-clb, clb: 限定参加または補足者
-# a-cmm, cmm: 解釈・分析・考察者
-# a-dsr, dsr: デザイナ
-# a-edt, edt: 編集者
-# a-ill, ill: イラストレータ
-# a-lyr, lyr: 歌詞作成者
-# a-mdc, mdc: メタデータセットの一次的責任者
-# a-mus, mus: 音楽家
-# a-nrt, nrt: 語り手
-# a-oth, oth: その他
-# a-pht, pht: 撮影責任者
-# a-prt, prt: 出版社
-# a-red, red: 項目の枠組起草者
-# a-rev, rev: 評論者
-# a-spn, spn: 援助者
-# a-ths, ths: 監督者
-# a-trc, trc: 筆記・タイプ作業者
-# a-trl, trl: 翻訳者
-
-# rights: 権利表記(配列で複数指定可)
-# date: 刊行日(省略した場合は実行時の日付)
-# description: 説明
-# subject: 短い説明用タグ(配列で複数指定可)
-# type: 書籍のカテゴリーなど(配列で複数指定可)
-# format: メディアタイプおよび特徴(配列で複数指定可)
-# source: 出版物生成の重要なリソース情報(配列で複数指定可)
-# relation: 補助的リソース(配列で複数指定可)
-# coverage: 内容の範囲や領域(配列で複数指定可)
-
-
-# デバッグフラグ。nullでないときには一時ファイルをカレントディレクトリに作成し、削除もしない
-debug: null
+# adp: 異なるメディア向けに作り直した者
+# ann: 注釈記述者
+# arr: アレンジした者
+# art: グラフィックデザインおよび芸術家
+# asn: 関連・かつての所有者・関係者
+# aqt: 大きく引用された人物
+# aft: 後書き・奥付の責任者
+# aui: 序論・序文・前書きの責任者
+# ant: 目録責任者
+# bkp: メディア制作責任者
+# clb: 限定参加または補足者
+# cmm: 解釈・分析・考察者
+# dsr: デザイナ
+# edt: 編集者
+# ill: イラストレータ
+# lyr: 歌詞作成者
+# mdc: メタデータセットの一次的責任者
+# mus: 音楽家
+# nrt: 語り手
+# oth: その他
+# pht: 撮影責任者
+# red: 項目の枠組起草者
+# rev: 評論者
+# spn: 援助者
+# ths: 監督者
+# trc: 筆記・タイプ作業者
+# trl: 翻訳者
+# description: ブックの説明
+# subject: 短い説明用タグ
+# type: 書籍のカテゴリーなど
+# format: メディアタイプおよび特徴
+# source: 出版物生成の重要なリソース情報
+# relation: 補助的リソース
+# coverage: 内容の範囲や領域
 
 # htmlext: HTMLファイルの拡張子(省略した場合はhtml)
-#
-# CSSファイル(配列で複数指定可)
-stylesheet: ["stylesheet.css"]
+# CSSファイル(配列で複数指定可、yamlファイルおよびRe:VIEWファイルを置いたディレクトリにあること)
+stylesheet: ["style.css"]
 
-# ePUBのバージョン (2か3)
-# epubversion: 2
+# ePUBのバージョン (2か3) 省略した場合は2
+epubversion: 3
 # HTMLのバージョン (4か5。epubversionを3にしたときには5にする)
-# htmlversion: 4
+# htmlversion: 5
 
 # 目次を作成する。Re:VIEW 1.5.0からデフォルトでは作成されなくなった。
 toc: true
 
-# 目次として抽出する見出しレベル
-toclevel: 3
-
-# 採番の設定。採番させたくない見出しには「==[nonum]」のようにnonum指定をする
-# 
-# 本文でセクション番号を表示する見出しレベル
-secnolevel: 2
-
-# 付録の連番のスタイル。null(アラビア数字1〜。デフォルト)、alpha(英字A〜)、roman(ローマ数字I〜)
-# appendix_format: null
-
-# 以下のsecnolevelはまだ未実装。
-# 前付でセクション番号を表示する見出しレベル(未実装)
-# pre_secnolevel: 0
-# 後付(付録)でセクション番号を表示する見出しレベル(未実装)
-# post_secnolevel: 1
-# 部番号を表示する見出しレベル(未実装)
-# part_secnolevel: 1
-
+# 目次として抽出する見出しレベル。省略した場合は2
+toclevel: 2
+# 本文でセクション番号を表示する見出しレベル。省略した場合は2
+# 採番させたくない見出しには「==[nonum]」のようにnonum指定をする
+secnolevel: 3
 # EPUB2標準の目次以外に物理目次ファイルを作成するか。省略した場合はnull (作成しない)
 # ePUB3においてはこの設定によらず必ず作成される
 # mytoc: true
 
+# 付録の連番のスタイル。null(アラビア数字1〜。デフォルト)、alpha(英字A〜)、roman(ローマ数字I〜)
+# appendix_format: null
+
 # 表紙にするHTMLファイル。ファイル名を指定すると表紙として入る
-# cover: null
-# 表紙に配置し、書籍の影絵にも利用する画像ファイル。省略した場合はnull (画像を使わない)。画像ディレクトリ内に置いてもディレクトリ名は不要(例: cover.jpg)
-# coverimage: null
+# cover: _cover.html
+# 表紙に配置し、書籍の影絵にも利用する画像ファイル。省略した場合はnull (画像を使わない)
+#coverimage: cover.jpg
 # 表紙の後に大扉ページを作成するか。省略した場合はnull (作成しない)
 # titlepage: null
 # 自動生成される大扉ページを上書きするファイル。ファイル名を指定すると大扉として入る
@@ -108,45 +102,16 @@ secnolevel: 2
 # originaltitlefile: null
 # 権利表記ページファイル。ファイル名を指定すると権利表記として入る
 # creditfile: null
-
-# 奥付を作成するか。デフォルトでは作成されない。trueを指定するとデフォルトの奥付、ファイル名を指定するとそれがcolophon.htmlとしてコピーされる
-# colophon: true
-
-# 裏表紙ファイル (画像はcoversまたはimagesに配置する)。ファイル名を指定すると裏表紙として入る
-# backcover: null
-
 # プロフィールページファイル。ファイル名を指定すると著者紹介として入る
 # profile: null
 # プロフィールページの目次上の見出し
 # profiletitle: 著者紹介
-
 # 広告ファイル。ファイル名を指定すると広告として入る
 # advfile: null
-
-# 取り込む画像が格納されているディレクトリ。省略した場合は以下
-# imagedir: images
-
-# 取り込むフォントが格納されているディレクトリ。省略した場合は以下
-# fontdir: fonts
-
-# imagedir内から取り込まれる対象となるファイル拡張子。省略した場合は以下
-# image_ext: ["png", "gif", "jpg", "jpeg", "svg", "ttf", "woff", "otf"]
-
-# fontdir内から取り込まれる対象となるファイル拡張子。省略した場合は以下
-# font_ext: ["ttf", "woff", "otf"]
-
-# review-compileに渡すパラメータ
-params: --stylesheet=stylesheet.css
-# Pygmentsカラーリングを利用する (pygments外部gemが必要)
-# pygments: true
-
-# カタログファイル名を指定する
-catalogfile: catalog.yml
-# 1ページの行数文字数と1kbごとのページ数を用紙サイズで指定する(A5 or B5)。
-# page_metric: A5
-# あるいは、配列で指定することもできる
-# 各数字の意味は、順にリストの行数、リストの1行字数、テキストの行数、テキストの1行字数、1kバイト毎のページ数
-# page_metric: [40,80,40,80,2]
+# 奥付を作成するか。デフォルトでは作成されない。trueを指定するとデフォルトの奥付、ファイル名を指定するとそれがcolophon.htmlとしてコピーされる
+colophon: true
+# 裏表紙ファイル (画像はcoversまたはimagesに配置する)。ファイル名を指定すると裏表紙として入る
+# backcover: null
 
 # 以下のパラメータを有効にするときには、
 # epubmaker:
@@ -199,41 +164,23 @@ catalogfile: catalog.yml
 #  zip_stage2: "zip -Xr9Dq"
 # ePUBアーカイブに追加するパス(デフォルトはmimetype、META-INF、OEBPS)
 #  zip_addpath: null
-# EPUBで表紙をコンテンツに含めるか。デフォルトでは作成されない。yesにするとiBooks等でも最初に表紙が表示されるようになる
-#  cover_linear: null
 #
 # epubmaker:階層を使うものはここまで
 
-# LaTeX用のスタイルファイル(styディレクトリ以下に置くこと)
-# texstyle: samplemacro
-# LaTeX用のdocumentclassを指定する
-# texdocumentclass: ["jsarticle", "b5paper,oneside"]
-# LaTeX用のコマンドを指定する(platex or lualatex)
-# texcommand: "platex"
-# LaTeX用のオプションを指定する(default: "-kanji=#{kanji}")
-# texoptions: "-kanji=utf-8"
-# LaTeX用のdvi変換コマンドを指定する(dvipdfmx)
-# dvicommand: "dvipdfmx"
-# LaTeX用のdvi変換コマンドのオプションを指定する
-# dvioptions: "-d 5"
+# ハイライトを有効にするか。pygments.gemが必要
+# pygments: null
 
-# 以下のパラメータを有効にするときには、
-# pdfmaker:
-#    パラメータ: 値
-#    パラメータ: 値
-#   ...
-# という構成にする必要がある(インデントさせる)
-#
-# pdfmaker:
-# TeXコンパイル前に実行するプログラム。変換後のTeXソースを調整したいときに使用する。
-# 渡される引数1=作業用展開ディレクトリ、引数2=呼び出しを実行したディレクトリ
-#   hook_beforetexcompile: null
-# TeXコンパイル後に実行するプログラム。索引作業をして再度コンパイルしたいときなどに使用する。
-# 渡される引数1=作業用展開ディレクトリ、引数2=呼び出しを実行したディレクトリ
-#   hook_aftertexcompile: null
-# PDF(book.pdf)作成後に実行するプログラム。PDFに加工を施したいときに使用する。
-# 渡される引数1=作業用展開ディレクトリ、引数2=呼び出しを実行したディレクトリ
-#   hook_afterdvipdf: null
-#
-# pdfmaker:階層を使うものはここまで
+# 取り込む画像が格納されているディレクトリ。省略した場合は以下
+# imagedir: images
 
+# 取り込むフォントが格納されているディレクトリ。省略した場合は以下
+# fontdir: fonts
+
+# imagedir内から取り込まれる対象となるファイル拡張子。省略した場合は以下
+# image_ext: ["png", "gif", "jpg", "jpeg", "svg", "ttf", "woff", "otf"]
+
+# fontdir内から取り込まれる対象となるファイル拡張子。省略した場合は以下
+# font_ext: ["ttf", "woff", "otf"]
+
+texstyle: reviewmacro
+debug: true
