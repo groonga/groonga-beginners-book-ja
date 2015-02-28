@@ -15,16 +15,16 @@ end
 namespace :generate do
   desc "generate HTML"
   task :html do |re_path|
-    system("review-compile", "--target=html", "--all")
+    sh("review-compile", "--target=html", "--all")
   end
 
   desc "generate PDF"
   task :pdf do
-    system("review-pdfmaker", config_path)
+    sh("review-pdfmaker", config_path)
   end
 
   desc "generate EPUB"
   task :epub do
-    system("review-epubmaker", config_path)
+    sh("review-epubmaker", config_path)
   end
 end
