@@ -70,6 +70,9 @@ stylesheet: ["stylesheet.css"]
 # HTMLのバージョン (4か5。epubversionを3にしたときには5にする)
 # htmlversion: 4
 
+# 目次を作成する。Re:VIEW 1.5.0からデフォルトでは作成されなくなった。
+toc: true
+
 # 目次として抽出する見出しレベル
 toclevel: 3
 

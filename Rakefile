@@ -13,10 +13,6 @@ def configurations
   @configurations ||= YAML.load(File.read(config_path))
 end
 
-def bookname
-  configurations["bookname"]
-end
-
 namespace :generate do
   desc "generate HTML"
   task :html do |re_path|
@@ -25,8 +21,6 @@ namespace :generate do
 
   desc "generate PDF"
   task :pdf do
-    pdf_path = "#{bookname}.pdf"
-    FileUtils.rm(pdf_path) if File.exist?(pdf_path)
     system("review-pdfmaker", config_path)
   end
 
