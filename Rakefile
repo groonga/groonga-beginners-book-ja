@@ -1,4 +1,3 @@
-require "fileutils"
 require "yaml"
 
 def base_dir
