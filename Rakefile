@@ -10,7 +10,7 @@ def config_path
 end
 
 def configurations
-  @configurations ||= YAML.load(File.read(config_path))
+  @configurations ||= YAML.load_file(config_path)
 end
 
 def bookname
